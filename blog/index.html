@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #ffffff;
+        /* Primary theme text color */
+        --primary-text-color: #374250;
+        /* Primary theme link color */
+        --primary-link-color: #3C4577;
+        /* Secondary color: the background body color*/
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        --toc-highlight-text-color: #4356c2;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+</style>
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/juice.css">
+    
+    <link rel="stylesheet" href="/carbon.css">
+    
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="/">
+    <div class="logo">
+        <img src="/logo.png" alt="logo">
+        base14.io
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/faq/">FAQ</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/changelog/">Changelog</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/privacy/">Privacy</a>
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="/docs">API Docs</a>
+        
+        <a class="nav-item subtitle-text" href="/blog">Blog</a>
+        
+        <a class="nav-item subtitle-text" href="/about">About</a>
+        
+        <a class="nav-item subtitle-text" href="https://github.com/base-14">Github</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+
+        <div class="content text">
+            
+<h1 class="title">
+  List of blog posts
+</h1>
+<ul>
+  <!-- If you are using pagination, section.pages will be empty.
+       You need to use the paginator object -->  
+  
+  <li><a href="/blog/first/">My first post</a></li>
+  
+</ul>
+
+        </div>
+
+        
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            <a href="https://huhu.io">Huhu.io</a> © 2021
+        </small>
+    </footer>
+    
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>
