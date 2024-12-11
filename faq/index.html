@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ |  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #ffffff;
+        /* Primary theme text color */
+        --primary-text-color: #374250;
+        /* Primary theme link color */
+        --primary-link-color: #3C4577;
+        /* Secondary color: the background body color*/
+        /* --secondary-color: #fcfaf6; */
+        --secondary-text-color: #303030;
+        --toc-highlight-text-color: #4356c2;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+</style>
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/juice.css">
+    
+<meta name="keywords"
+      content="platform, infrastrcuture, logs, observability, metrics, error, collector">
+<meta itemprop="name"
+      content="base 14: Redefine Autonomous Reliability">
+<meta itemprop="description"
+      content="All of your production infrastructure on autopilot with high reliability and low cost.">
+<meta itemprop="image" content="https://base14.io/logo.png">
+
+<meta property="og:url" content="https://base14.io">
+<meta property="og:type" content="website">
+<meta property="og:title"
+      content="base 14: Redefine Autonomous Reliability">
+<meta property="og:description"
+      content="All of your production infrastructure on autopilot with high reliability and low cost.">
+<meta property="og:image" content="https://base14.io/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@base14io">
+<meta name="twitter:creator" content="@base14io">
+<meta name="twitter:title"
+      content="base 14: Redefine Autonomous Reliability">
+<meta name="twitter:description"
+      content="All of your production infrastructure on autopilot with high reliability and low cost.">
+<meta name="twitter:image" content="https://base14.io/logo.png">
+<link rel="stylesheet" href="/index.css">
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="/">
+    <div class="logo">
+        <img src="/logo.png" alt="logo">
+        base14.io
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/about/">About</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="/contact/">Contact</a>
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="/blog">Blog</a>
+        
+        <a class="nav-item subtitle-text" href="https://github.com/base-14">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+<div class="toc" style="width: 0; height: 0; display: none;">
+</div>
+
+
+        <div class="content text">
+            
+<div class="heading-text">Frequently asked questions</div>
+<h1 id="platform">Platform</h1>
+<h3 id="what-are-the-limits">What are the limits?</h3>
+<p>Meh</p>
+<h1 id="credentials">Credentials</h1>
+<h3 id="is-credential-rotation-supported">Is credential rotation supported?</h3>
+<p>Yo</p>
+
+
+        </div>
+
+        
+<div class="sidebar" style="width: 0; height: 0; display: none;">
+</div>
+
+    </main>
+
+    
+<footer>
+  <span>© base14 2024</span>
+</footer>
+<script>
+  window.onmessage = e => {
+    e.data.hasOwnProperty("frameHeight") && (document.getElementById("footer").style.height = `${e.data.frameHeight}px`)
+  }
+</script>
+
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>
